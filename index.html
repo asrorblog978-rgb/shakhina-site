@@ -14,8 +14,17 @@
 <link rel="preload" as="image" href="shakhina-960.webp" imagesrcset="shakhina-480.webp 480w, shakhina-720.webp 720w, shakhina-960.webp 960w, shakhina-1300.webp 1300w" imagesizes="(max-width: 880px) 90vw, 423px" fetchpriority="high">
 <link rel="preload" as="font" href="fonts/fraunces-normal-500.woff2" type="font/woff2" crossorigin>
 <link rel="preload" as="font" href="fonts/manrope-variable.woff2" type="font/woff2" crossorigin>
-<link rel="dns-prefetch" href="https://connect.facebook.net">
-<script src="pixel.js?v=3" async></script>
+<!-- Meta Pixel (standart kod, darhol yuklanadi — aniq ma'lumot uchun) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2541674882923266');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel -->
 <style>
 html, body { margin: 0; background: #faf7f2; }
 @font-face {
@@ -379,5 +388,28 @@ html, body { margin: 0; background: #faf7f2; }
   </div>
 </main>
 
+<script>
+// "DARSGA QO'SHILISH" (Telegram) tugmasi bosilganda Meta'ga Lead hodisasi.
+// Sahifa yopilib qolmasidan oldin hodisa yetib borishi uchun o'tish 300ms kechiktiriladi.
+(function () {
+  var sent = false;
+  document.querySelectorAll('a.sk-btn').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      if (e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0) return;
+      if (!sent && window.fbq) {
+        sent = true;
+        var inPopup = !!a.closest('.sk-pop');
+        fbq('track', 'Lead', {
+          content_name: 'Telegram kanal - bepul dars',
+          content_category: inPopup ? 'popup' : 'asosiy tugma'
+        }, { eventID: 'lead-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8) });
+      }
+      e.preventDefault();
+      var href = a.href;
+      setTimeout(function () { location.href = href; }, 300);
+    });
+  });
+})();
+</script>
 </body>
 </html>
