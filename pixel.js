@@ -20,8 +20,11 @@
     d.head.appendChild(s);
   }
   function schedule() {
-    if ('requestIdleCallback' in w) w.requestIdleCallback(loadFb, { timeout: 2500 });
-    else setTimeout(loadFb, 1500);
+    // Sahifa yuklangandan 3 soniya o'tib, brauzer bo'sh paytida yuklanadi.
+    setTimeout(function () {
+      if ('requestIdleCallback' in w) w.requestIdleCallback(loadFb, { timeout: 1500 });
+      else loadFb();
+    }, 3000);
   }
   // Foydalanuvchi sahifa bilan ishlay boshlasa — darhol yuklaymiz.
   ['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach(function (e) {
