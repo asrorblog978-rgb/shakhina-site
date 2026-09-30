@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shakhina Kayumova</title>
+<meta name="description" content="Shaxsiy texnikam orqali ingliz tilini 3X tezroq o'rganish sirini 2 kunlik darsimda o'rgataman!">
+<meta property="og:title" content="Shakhina Kayumova ochiq dars">
+<meta property="og:description" content="Qanday qilib 2 oyda ingliz tilida ravon gapirsa bo'ladi?">
+<meta property="og:image" content="shakhina.jpg">
+<meta property="og:url" content="https://shakhina.uz">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#faf7f2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;1,500&family=Manrope:wght@400..800&display=swap" rel="stylesheet">
+<script src="pixel.js" async></script>
+<style>
+html, body { margin: 0; background: #faf7f2; }
+.sk {
+  --bg: #faf7f2;
+  --card: #ffffff;
+  --ink: #1c1916;
+  --muted: #5f5850;
+  --faint: #8f877c;
+  --line: #ebe4d9;
+  --red: #ee2a22;
+  --red-deep: #cf1d16;
+  --red-soft: #fcebe8;
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: clamp(28px, 4vw, 44px) 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 17px/1.6 var(--sans);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+.sk *, .sk *::before, .sk *::after { box-sizing: border-box; }
+.sk::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(55% 60% at 88% 30%, rgba(201, 140, 88, 0.20), transparent 70%),
+    radial-gradient(40% 45% at 0% 100%, rgba(227, 43, 35, 0.06), transparent 70%);
+}
+:where(.sk) :where(h1, h2, p, ul, figure) { margin: 0; padding: 0; }
+
+.sk-wrap {
+  position: relative;
+  width: min(1140px, 100% - 40px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  grid-template-areas: "text photo";
+  gap: clamp(40px, 6vw, 88px);
+  align-items: center;
+}
+.sk-text { grid-area: text; display: flex; flex-direction: column; align-items: flex-start; }
+
+.sk-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 7px 7px 16px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: 0 6px 18px -12px rgba(60, 40, 20, 0.35);
+}
+.sk-live { position: relative; width: 8px; height: 8px; border-radius: 50%; background: var(--red); flex: none; }
+.sk-live::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--red); animation: sk-ping 1.8s ease-out infinite; }
+.sk-date-d { font-size: 13.5px; font-weight: 700; letter-spacing: 0.08em; }
+.sk-date-t { font-size: 16px; font-weight: 800; letter-spacing: 0.02em; color: #fff; background: var(--ink); padding: 5px 13px; border-radius: 999px; font-variant-numeric: tabular-nums; }
+
+.sk h1 {
+  margin-top: 22px;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(34px, 4.4vw, 54px);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.sk h1 em { font-style: italic; color: var(--red-deep); }
+.sk-lead { margin-top: 16px; max-width: 48ch; font-size: 18.5px; line-height: 1.6; color: var(--muted); }
+.sk-lead strong { color: var(--ink); font-weight: 700; }
+
+.sk-card {
+  margin-top: 26px;
+  width: 100%;
+  max-width: 560px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 24px 26px 10px;
+  box-shadow: 0 24px 48px -32px rgba(60, 40, 20, 0.30);
+}
+.sk-card h2 { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 23px; line-height: 1.2; }
+.sk-card ul { list-style: none; margin-top: 12px; }
+.sk-card li { display: grid; grid-template-columns: 28px 1fr; gap: 14px; padding: 11px 0; font-size: 16.5px; line-height: 1.5; }
+.sk-card li + li { border-top: 1px solid var(--line); }
+.sk-tick { width: 28px; height: 28px; border-radius: 50%; background: var(--red-soft); display: grid; place-items: center; margin-top: -1px; }
+.sk-tick svg { width: 14px; height: 14px; fill: none; stroke: var(--red-deep); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+
+.sk-cta { margin-top: 26px; width: 100%; max-width: 560px; display: flex; flex-direction: column; align-items: center; }
+.sk a.sk-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+  min-height: 74px;
+  padding: 14px 26px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #ff4b3e 0%, var(--red) 50%, var(--red-deep) 100%);
+  color: #fff;
+  font: 800 21px/1.1 var(--sans);
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 16px 32px -12px rgba(196, 28, 22, 0.6);
+  transition: transform 0.2s ease, filter 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.sk a.sk-btn::before {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0; left: -40%;
+  width: 28%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  transform: skewX(-20deg);
+  animation: sk-shine 3.6s ease-in-out infinite;
+  z-index: -1;
+}
+.sk a.sk-btn:hover { transform: translateY(-2px); filter: brightness(1.05); }
+.sk a.sk-btn:active { transform: translateY(0); filter: brightness(0.97); }
+.sk a.sk-btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
+.sk-btn-wrap { position: relative; display: block; width: 100%; border-radius: 20px; }
+.sk-btn-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 14px rgba(227, 43, 35, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  animation: sk-ring 2.6s ease-out infinite;
+}
+.sk-btn-ic { flex: none; width: 38px; height: 38px; border-radius: 50%; background: #fff; display: grid; place-items: center; }
+.sk-btn-ic svg { width: 20px; height: 20px; fill: var(--red); margin-left: -2px; }
+.sk-btn-ar { flex: none; width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.2s ease; }
+.sk a.sk-btn:hover .sk-btn-ar { transform: translateX(4px); }
+.sk-cta p { margin-top: 14px; font-size: 15.5px; font-weight: 600; color: var(--muted); text-align: center; }
+
+.sk-photo { grid-area: photo; position: relative; justify-self: end; width: 100%; max-width: 470px; }
+.sk-photo::before {
+  content: "";
+  position: absolute;
+  top: calc(13% - 14px); right: -14px; bottom: -14px; left: -14px;
+  border: 1px solid rgba(207, 29, 22, 0.22);
+  border-radius: 999px 999px 44px 44px;
+}
+.sk-photo-in {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 0 0 32px 32px;
+}
+.sk-arch {
+  position: absolute;
+  top: 13%; right: 0; bottom: 0; left: 0;
+  border-radius: 999px 999px 32px 32px;
+  background:
+    radial-gradient(80% 55% at 50% 12%, rgba(255, 244, 239, 0.9), rgba(255, 244, 239, 0) 70%),
+    linear-gradient(175deg, #f7d3c6 0%, #eeb19d 55%, #e2917a 100%);
+}
+.sk-photo img {
+  position: absolute;
+  top: 3%; left: 5%;
+  width: 90%;
+  height: auto;
+  filter: drop-shadow(0 14px 22px rgba(110, 45, 25, 0.22));
+}
+.sk-photo figcaption {
+  position: absolute;
+  left: 18px; bottom: 18px;
+  padding: 12px 18px 13px;
+  background: rgba(250, 247, 242, 0.86);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 18px;
+  line-height: 1.25;
+}
+.sk-photo figcaption strong { display: block; font-family: var(--serif); font-weight: 500; font-size: 20px; letter-spacing: -0.01em; }
+.sk-photo figcaption span { display: block; margin-top: 3px; font-size: 14px; color: var(--muted); }
+.sk-photo figcaption b { color: var(--ink); font-weight: 800; }
+
+.sk-up { animation: sk-up 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both; animation-delay: var(--d, 0s); }
+
+@keyframes sk-up { from { opacity: 0; transform: translateY(16px); } }
+@keyframes sk-ping { 0% { transform: scale(1); opacity: 0.7; } 80%, 100% { transform: scale(2.8); opacity: 0; } }
+@keyframes sk-shine { 0%, 55% { left: -40%; } 100% { left: 130%; } }
+@keyframes sk-ring {
+  0% { transform: scale(0.94, 0.78); opacity: 1; }
+  70%, 100% { transform: scale(1.02, 1.1); opacity: 0; }
+}
+
+@media (max-width: 880px) {
+  .sk { align-items: flex-start; padding: 24px 0 40px; }
+  .sk-wrap { width: min(560px, 100% - 32px); grid-template-columns: 1fr; grid-template-areas: "date" "h1" "photo" "lead" "card" "cta"; gap: 0; }
+  .sk-text { display: contents; }
+  .sk-date { grid-area: date; justify-self: start; }
+  .sk h1 { grid-area: h1; margin-top: 20px; }
+  .sk-photo { grid-area: photo; justify-self: stretch; max-width: none; margin-top: 26px; }
+  .sk-photo::before { display: none; }
+  .sk-photo-in { aspect-ratio: 1 / 1.05; border-radius: 0 0 26px 26px; }
+  .sk-arch { border-radius: 999px 999px 26px 26px; }
+  .sk-photo figcaption { left: 14px; bottom: 14px; }
+  .sk-lead { grid-area: lead; margin-top: 22px; font-size: 17.5px; }
+  .sk-card { grid-area: card; margin-top: 24px; max-width: none; padding: 20px 20px 6px; }
+  .sk-cta { grid-area: cta; margin-top: 26px; max-width: none; }
+  .sk a.sk-btn { min-height: 68px; font-size: 19px; gap: 12px; padding: 12px 18px; border-radius: 18px; }
+  .sk-btn-wrap { border-radius: 18px; }
+  .sk-btn-ic { width: 34px; height: 34px; }
+  .sk-btn-ic svg { width: 18px; height: 18px; }
+}
+@media (max-width: 360px) {
+  .sk-date { gap: 8px; padding-left: 12px; }
+  .sk-date-d { font-size: 12px; letter-spacing: 0.05em; }
+  .sk a.sk-btn { font-size: 17px; letter-spacing: 0.03em; }
+  .sk-btn-ar { display: none; }
+}
+.sk-pop { display: none; }
+@keyframes sk-pop-in { from { opacity: 0; visibility: hidden; } }
+@keyframes sk-pop-up { from { transform: translateY(24px) scale(0.96); } }
+@media (max-width: 880px) {
+  .sk-pop {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px calc(24px + env(safe-area-inset-bottom));
+    background: rgba(28, 25, 22, 0.62);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    overscroll-behavior: contain;
+    animation: sk-pop-in 0.35s ease 2s both;
+  }
+  .sk-pop[hidden] { display: none; }
+  .sk-pop-in {
+    width: 100%;
+    max-width: 440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: sk-pop-up 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) 2s both;
+  }
+  .sk-pop a.sk-btn { min-height: 76px; font-size: 20px; }
+  .sk-pop p { margin-top: 16px; font-size: 15.5px; font-weight: 600; color: rgba(255, 255, 255, 0.85); text-align: center; }
+  .sk-x {
+    position: absolute;
+    top: calc(14px + env(safe-area-inset-top));
+    right: 14px;
+    width: 32px; height: 32px;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .sk-x svg { width: 11px; height: 11px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; }
+}
+@media (max-width: 360px) {
+  .sk-pop a.sk-btn { font-size: 17px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sk-up, .sk a.sk-btn::before, .sk-btn-wrap::before, .sk-live::after { animation: none; }
+  .sk-pop-in { animation: none; }
+}
+</style>
+
+<main class="sk">
+  <div class="sk-wrap">
+    <div class="sk-text">
+      <div class="sk-date">
+        <span class="sk-live" aria-hidden="true"></span>
+        <span class="sk-date-d">28-29-SENTABR KUNLARI</span>
+        <span class="sk-date-t">20:00</span>
+      </div>
+
+      <h1>Qanday qilib <em>2 oyda</em> ingliz tilida ravon gapirsa bo'ladi?</h1>
+
+      <p class="sk-lead sk-up" style="--d:.2s">Shaxsiy texnikam orqali ingliz tilini <strong>3X tezroq</strong> o'rganish sirini 2 kunlik darsimda o'rgataman!</p>
+
+      <section class="sk-card sk-up" style="--d:.28s">
+        <h2>Bepul ochiq darsimda:</h2>
+        <ul>
+          <li><span class="sk-tick" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3.5 8.5l3 3 6-7"/></svg></span><span>So'zlarni esdan chiqarmaydigan qilib yodlab speaking va writingda ishlatish usullari</span></li>
+          <li><span class="sk-tick" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3.5 8.5l3 3 6-7"/></svg></span><span>Ingliz tiliga yillab vaqt ketkazmasdan, sinalgan usullar orqali to'xtamasdan gapirishni</span></li>
+          <li><span class="sk-tick" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3.5 8.5l3 3 6-7"/></svg></span><span>So'z yodlash va xotirani kuchaytirib ingliz tilini 3X tez o'rganish uchun SUPER texnikalarni o'rgatib beraman</span></li>
+        </ul>
+      </section>
+
+      <div class="sk-cta sk-up" style="--d:.36s">
+        <div class="sk-btn-wrap">
+          <a class="sk-btn" href="https://t.me/+tgIGL0XADUU4ZmIy">
+            <span class="sk-btn-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.04 15.47 8.9 19.4c.5 0 .72-.22.98-.48l2.36-2.25 4.9 3.58c.9.5 1.53.24 1.77-.83l3.2-15.02c.3-1.33-.48-1.85-1.35-1.52L1.4 10.1c-1.28.5-1.26 1.22-.22 1.54l4.83 1.5L17.2 6.1c.53-.35 1.01-.16.61.2z"/></svg></span>
+            <span>DARSGA QO'SHILISH</span>
+            <svg class="sk-btn-ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <p>Tugmani bosib Telegram kanalga obuna bo'ling!</p>
+      </div>
+    </div>
+
+    <figure class="sk-photo">
+      <div class="sk-photo-in">
+        <span class="sk-arch" aria-hidden="true"></span>
+        <img src="shakhina.webp" alt="Shakhina Kayumova" width="687" height="1020" fetchpriority="high">
+      </div>
+      <figcaption><strong>Shakhina Kayumova</strong><span><b>IELTS 9.0</b> sohibasi</span></figcaption>
+    </figure>
+  </div>
+
+  <div class="sk-pop" role="dialog" aria-label="DARSGA QO'SHILISH">
+    <button type="button" class="sk-x" aria-label="Yopish" onclick="this.parentNode.hidden = true"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 2l8 8M10 2l-8 8"/></svg></button>
+    <div class="sk-pop-in">
+      <div class="sk-btn-wrap">
+        <a class="sk-btn" href="https://t.me/+tgIGL0XADUU4ZmIy">
+          <span class="sk-btn-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.04 15.47 8.9 19.4c.5 0 .72-.22.98-.48l2.36-2.25 4.9 3.58c.9.5 1.53.24 1.77-.83l3.2-15.02c.3-1.33-.48-1.85-1.35-1.52L1.4 10.1c-1.28.5-1.26 1.22-.22 1.54l4.83 1.5L17.2 6.1c.53-.35 1.01-.16.61.2z"/></svg></span>
+          <span>DARSGA QO'SHILISH</span>
+        </a>
+      </div>
+      <p>Tugmani bosib Telegram kanalga obuna bo'ling!</p>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>
